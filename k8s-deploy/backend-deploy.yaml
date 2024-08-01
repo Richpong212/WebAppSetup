@@ -22,4 +22,5 @@ spec:
           env:
             - name: NODE_ENV
               value: production
-          resources:
+            - name: PORT
+              value: "5001" # Ensure the PORT is set here
