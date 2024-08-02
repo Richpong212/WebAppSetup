@@ -16,6 +16,18 @@ spec:
     spec:
       containers:
         - name: backend
-          image: zlenoski/backend:latest
+          image: zlenoski/backend:latest # Correct Docker image
           ports:
             - containerPort: 5001
+          env:
+            - name: PORT
+              value: "5001" # Set the correct port environment variable
+            - name: NODE_ENV
+              value: production
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
